@@ -95,3 +95,50 @@
 - JMeter: 六组独立测试已完成
 - GitHub: 仓库、功能分支、PR和main分支保护已完成
 - Jenkins: Pipeline实际运行成功，Build #5 SUCCESS
+
+## Stage View Plugin Fix & Build #8
+
+### Plugin Installation
+- **Plugin**: pipeline-stage-view **v2.41**
+- **Installation**: Via Plugin Manager API, safe restart
+- **Status**: Active ✅
+
+### Build #8 (with Stage View)
+- **Build Number**: #8
+- **Status**: SUCCESS
+- **Duration**: 48.1s
+- **SCM**: SSH (git@github.com:yueheng-rgb/OnlineBookstore_Experiment5.git)
+- **Tests**: 30 passed, 0 failed, 0 errors
+- **Stage View URL**: http://127.0.0.1:8090/job/OnlineBookstore-Experiment5-Pipeline/
+
+### Stage View Columns
+| Stage | Status | Duration |
+|-------|--------|----------|
+| Declarative: Checkout SCM | SUCCESS | 4.4s |
+| Declarative: Tool Install | SUCCESS | 0.1s |
+| 1. Checkout | SUCCESS | 4.2s |
+| 2. Environment Check | SUCCESS | 0.8s |
+| 3. Compile | SUCCESS | 5.3s |
+| 4. Unit Test | SUCCESS | 19.4s |
+| 5. Comment Coverage Check | SUCCESS | 0.4s |
+| 6. JaCoCo Report | SUCCESS | 2.3s |
+| 7. Package | SUCCESS | 4.4s |
+| 8. Archive Artifacts | SUCCESS | 0.4s |
+| Declarative: Post Actions | SUCCESS | 0.1s |
+
+### Build History (all)
+| # | Result | Key Detail |
+|---|--------|------------|
+| 1 | FAILURE | git.exe not found |
+| 2 | FAILURE | BOM in Jenkinsfile |
+| 3 | FAILURE | BOM (SCM cache) |
+| 4 | FAILURE | JDK tool not configured |
+| 5 | SUCCESS | First full success (HTTPS clone) |
+| 6 | FAILURE | GitHub HTTPS intermittent |
+| 7 | FAILURE | GitHub HTTPS intermittent |
+| **8** | **SUCCESS** | **SSH clone + Stage View active** |
+
+### Screenshots
+- Stage View: http://127.0.0.1:8090/job/OnlineBookstore-Experiment5-Pipeline/
+- Build #8: http://127.0.0.1:8090/job/OnlineBookstore-Experiment5-Pipeline/8/
+- Console: http://127.0.0.1:8090/job/OnlineBookstore-Experiment5-Pipeline/8/console
