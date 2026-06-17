@@ -1,0 +1,7 @@
+mode,threads,samples,average_ms,median_ms,p90_ms,p95_ms,p99_ms,min_ms,max_ms,throughput_per_sec,error_rate_percent,received_kb_sec,sent_kb_sec,result_file
+nocache,10,100,3.65,3.0,5,5,36,1,36,11.25,0.0,6.2,0,jmeter/results/nocache/10/result.jtl
+nocache,50,500,2.26,2.0,4,4,5,0,41,51.94,0.0,28.6,0,jmeter/results/nocache/50/result.jtl
+nocache,100,1000,1.44,1.0,2,3,4,0,53,102.94,0.0,56.69,0,jmeter/results/nocache/100/result.jtl
+redis,10,100,3.37,3.0,4,5,44,1,44,11.29,0.0,6.22,0,jmeter/results/redis/10/result.jtl
+redis,50,500,2.15,2.0,3,4,7,0,40,51.75,0.0,28.5,0,jmeter/results/redis/50/result.jtl
+redis,100,1000,1.45,1.0,2,3,4,0,57,103.43,0.0,56.96,0,jmeter/results/redis/100/result.jtl
