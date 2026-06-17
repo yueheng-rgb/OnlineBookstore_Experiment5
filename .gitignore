@@ -1,6 +1,7 @@
-﻿# Maven
+# Maven
 target/
 *.jar
+!.mvn/wrapper/maven-wrapper.jar
 *.war
 pom.xml.tag
 pom.xml.releaseBackup
@@ -31,7 +32,7 @@ application-local.yml
 jmeter/results/*.html
 jmeter/results/*.jtl
 
-# Evidence (人工证据)
+# Evidence (????)
 evidence/screenshots/*.png
 evidence/video/*.mp4
 evidence/signatures/*
