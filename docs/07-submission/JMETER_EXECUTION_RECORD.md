@@ -1,95 +1,90 @@
 ﻿# JMeter Execution Record
 
-> Generated: 2026-06-17 17:10:17
+> Generated: 2026-06-17 17:18:49
 > Project: OnlineBookstore_Experiment5
 
-## Execution Summary
+## Environment
 
-| # | Test | Start | End | Status | Retries |
-|---|------|-------|-----|--------|---------|
-| 1 | NoCache-10/50/100 | 2026-06-17 17:06:14 | 2026-06-17 17:06:49 | ✅ Success | 0 |
-| 2 | Redis-10/50/100 | 2026-06-17 17:08:10 | 2026-06-17 17:08:45 | ✅ Success | 0 |
+| Item | Value |
+|------|-------|
+| Java | 17.0.18 (Eclipse Adoptium) |
+| Spring Boot | 3.2.0 |
+| JMeter | 5.6.3 |
+| Redis | 3.0.504 (Windows native) |
+| App Port | 8080 |
+| Test API | GET /api/books/1 |
 
-## Detailed Commands
+## Execution Summary — Six Independent Runs
 
-### Test 1: NoCache Mode
+| # | Mode | Concurrency | Start | End | Samples | Errors | Status |
+|---|------|-------------|-------|-----|---------|--------|--------|
+| 1 | NoCache | 10 | 2026-06-17 17:15:44 | 2026-06-17 17:15:58 | 100 | 0 | ✅ |
+| 2 | NoCache | 50 | 2026-06-17 17:15:58 | 2026-06-17 17:16:14 | 500 | 0 | ✅ |
+| 3 | NoCache | 100 | 2026-06-17 17:16:14 | 2026-06-17 17:16:29 | 1000 | 0 | ✅ |
+| 4 | Redis | 10 | 2026-06-17 17:17:03 | 2026-06-17 17:17:17 | 100 | 0 | ✅ |
+| 5 | Redis | 50 | 2026-06-17 17:17:17 | 2026-06-17 17:17:32 | 500 | 0 | ✅ |
+| 6 | Redis | 100 | 2026-06-17 17:17:32 | 2026-06-17 17:17:47 | 1000 | 0 | ✅ |
 
-**App Start:**
+## Independent JMX Files
+
+Each test used its own JMX file with exactly one thread group enabled:
+
+| Test | JMX File |
+|------|----------|
+| NoCache-10 | jmeter/independent_nocache_10.jmx |
+| NoCache-50 | jmeter/independent_nocache_50.jmx |
+| NoCache-100 | jmeter/independent_nocache_100.jmx |
+| Redis-10 | jmeter/independent_redis_10.jmx |
+| Redis-50 | jmeter/independent_redis_50.jmx |
+| Redis-100 | jmeter/independent_redis_100.jmx |
+
+## App Start Commands
+
+**NoCache mode (tests 1-3):**
 `
 java -jar target/online-bookstore-1.0.0-SNAPSHOT.jar --spring.profiles.active=nocache,h2
 `
-- PID: 19100
-- Port: 8080
-- Startup time: ~12 seconds
+- PID: 10748
 
-**JMeter Command:**
-`
-jmeter -n -t jmeter/online-bookstore-nocache-test.jmx -JBASE_URL=localhost -JPORT=8080 ^
-  -l jmeter/results/nocache/result.jtl -e -o jmeter/results/nocache/html-report
-`
-- Total samples: 1600
-- Duration: ~29 seconds
-- Errors: 0
-
-### Test 2: Redis Cache Mode
-
-**Redis Start:**
+**Redis mode (tests 4-6):**
 `
 C:\Program Files\Redis\redis-server.exe
 `
-- PID: 14876
-- Port: 6379
-- Verified: PONG
+- Redis PID: 12976
 
-**App Start:**
 `
 java -jar target/online-bookstore-1.0.0-SNAPSHOT.jar --spring.profiles.active=redis,h2
 `
-- PID: 15476
-- Port: 8080
-- Startup time: ~12 seconds
+- App PID: 18808
 
-**JMeter Command:**
+## Individual JMeter Commands
+
+Test parameters: -JBASE_URL=localhost -JPORT=8080, Ramp-up=10s, Loops=10.
+
 `
-jmeter -n -t jmeter/online-bookstore-redis-cache-test.jmx -JBASE_URL=localhost -JPORT=8080 ^
-  -l jmeter/results/redis/result.jtl -e -o jmeter/results/redis/html-report
+#1: jmeter -n -t jmeter/independent_nocache_10.jmx  -l jmeter/results/nocache/10/result.jtl  -e -o jmeter/results/nocache/10/html-report  -j jmeter/results/nocache/10/jmeter.log
+#2: jmeter -n -t jmeter/independent_nocache_50.jmx  -l jmeter/results/nocache/50/result.jtl  -e -o jmeter/results/nocache/50/html-report  -j jmeter/results/nocache/50/jmeter.log
+#3: jmeter -n -t jmeter/independent_nocache_100.jmx -l jmeter/results/nocache/100/result.jtl -e -o jmeter/results/nocache/100/html-report -j jmeter/results/nocache/100/jmeter.log
+#4: jmeter -n -t jmeter/independent_redis_10.jmx   -l jmeter/results/redis/10/result.jtl   -e -o jmeter/results/redis/10/html-report   -j jmeter/results/redis/10/jmeter.log
+#5: jmeter -n -t jmeter/independent_redis_50.jmx   -l jmeter/results/redis/50/result.jtl   -e -o jmeter/results/redis/50/html-report   -j jmeter/results/redis/50/jmeter.log
+#6: jmeter -n -t jmeter/independent_redis_100.jmx  -l jmeter/results/redis/100/result.jtl  -e -o jmeter/results/redis/100/html-report  -j jmeter/results/redis/100/jmeter.log
 `
-- Total samples: 1600
-- Duration: ~29 seconds
-- Errors: 0
 
-## Result Files
-
-| File | Absolute Path |
-|------|---------------|
-| NoCache JTL | jmeter/results/nocache/result.jtl |
-| NoCache HTML | jmeter/results/nocache/html-report/index.html |
-| Redis JTL | jmeter/results/redis/result.jtl |
-| Redis HTML | jmeter/results/redis/html-report/index.html |
-| CSV Summary | evidence/jmeter/jmeter-performance-summary.csv |
-
-## Screenshots Required (Manual)
-
-以下三个 HTML 报告页面需要手动截屏：
-
-1. **NoCache 100并发报告**
-   - 文件: jmeter/results/nocache/html-report/index.html
-   - 保存为: evidence/screenshots/14-jmeter-nocache-100-report.png
-   - 截图区域: Dashboard 概览 + Statistics 表格
-
-2. **Redis 100并发报告**
-   - 文件: jmeter/results/redis/html-report/index.html
-   - 保存为: evidence/screenshots/15-jmeter-redis-100-report.png
-   - 截图区域: Dashboard 概览 + Statistics 表格
-
-3. **性能对比汇总**
-   - 保存为: evidence/screenshots/16-jmeter-performance-comparison.png
-   - 截图区域: 本报告第4节的表格 + 对比分析
+Each test directory also contains command.txt with per-run metadata and environment.txt.
 
 ## Cleanup
 
-- NoCache app stopped (PID 19100 killed)
-- Redis server stopped (PID 14876 killed)
-- Redis app stopped (PID 15476 killed)
-- No residual Java/Redis processes
+- NoCache app stopped (PID 10748)
+- Redis server stopped (PID 12976)
+- Redis app stopped (PID 18808)
+- No residual processes
 
+## Screenshots Required (Manual)
+
+1. **NoCache 100并发**: jmeter/results/nocache/100/html-report/index.html → evidence/screenshots/14-jmeter-nocache-100-report.png
+2. **Redis 100并发**: jmeter/results/redis/100/html-report/index.html → evidence/screenshots/15-jmeter-redis-100-report.png
+3. **对比汇总**: docs/04-testing/JMETER_PERFORMANCE_TEST_REPORT.md → evidence/screenshots/16-jmeter-performance-comparison.png
+
+## Jira Status
+
+Jira已采用手工建立代表性长篇故事、故事和子任务层级的方式完成证据展示，完整35项任务保留在CSV中作为规划材料。
