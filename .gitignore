@@ -29,8 +29,7 @@ application-local.properties
 application-local.yml
 
 # JMeter results
-jmeter/results/*.html
-jmeter/results/*.jtl
+jmeter/results/
 
 # Evidence (????)
 evidence/screenshots/*.png

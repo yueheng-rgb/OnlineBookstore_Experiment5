@@ -1,0 +1,12 @@
+JMeter Performance Test Environment
+==================================================
+Date: 2026-06-17 17:09:13
+OS: Windows
+Java: 17.0.18 (Eclipse Adoptium)
+Maven: wrapper (mvnw.cmd)
+JMeter: 5.6.3
+Redis: 3.0.504 (Windows)
+Spring Boot: 3.x (from pom.xml)
+App Port: 8080
+Test API: GET /api/books/1
+H2 Database: in-memory
