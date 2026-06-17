@@ -1,0 +1,24 @@
+﻿spring:
+  application:
+    name: online-bookstore
+  profiles:
+    active: h2
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+
+---
+spring:
+  config:
+    activate:
+      on-profile: nocache
+  cache:
+    type: none

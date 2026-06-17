@@ -1,0 +1,57 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "http://localhost:8080/api/orders/1",
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "code": 200,
+      "message": "操作成功",
+      "data": {
+        "id": 1,
+        "orderNumber": "ORD-20260616-637561",
+        "user": {
+          "id": 4,
+          "username": "testuser_1781612637",
+          "email": "test_1781612637@example.com",
+          "phone": null,
+          "address": null,
+          "role": "CUSTOMER",
+          "createdAt": "2026-06-16T20:23:57.362865",
+          "updatedAt": "2026-06-16T20:23:57.362865",
+          "hibernateLazyInitializer": {}
+        },
+        "totalAmount": 118.0,
+        "status": "PENDING",
+        "shippingAddress": "123 Test Street, Beijing",
+        "orderItems": [
+          {
+            "id": 1,
+            "book": {
+              "id": 1,
+              "isbn": "978-7-111-11111-1",
+              "title": "Software Engineering Intro",
+              "author": "Zhang Haifan",
+              "publisher": "Tsinghua UP",
+              "description": "Classic SE textbook",
+              "price": 59.0,
+              "stock": 98,
+              "category": "CS",
+              "coverImageUrl": null,
+              "createdAt": "2026-06-16T20:23:15.404609",
+              "updatedAt": "2026-06-16T20:23:57.589563"
+            },
+            "quantity": 2,
+            "unitPrice": 59.0,
+            "subtotal": 118.0
+          }
+        ],
+        "createdAt": "2026-06-16T20:23:57.565849",
+        "updatedAt": "2026-06-16T20:23:57.565849"
+      },
+      "timestamp": "2026-06-16T20:23:57.6437937"
+    }
+  }
+}

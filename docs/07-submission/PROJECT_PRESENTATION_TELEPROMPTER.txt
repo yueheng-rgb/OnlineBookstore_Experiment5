@@ -1,0 +1,118 @@
+﻿=== 开场介绍 ===
+【屏幕：README.md】
+
+各位老师好，我今天介绍的是实验五
+软件项目开发阶段管理的实验成果
+我做的项目是一个在线书店系统
+
+这个实验的重点不是单纯写代码
+而是管理需求、设计、开发、测试和部署全过程
+使用 Java 17 和 Spring Boot 3.2 开发
+默认使用 H2 内存数据库
+
+=== 需求分析 ===
+【屏幕：docs/01-requirements/】
+
+系统有三个用户角色
+普通用户可以浏览图书、加入购物车、提交订单
+运营管理员管理订单状态和处理取消
+开发测试人员关注性能、缓存和持续集成
+
+我编写了 IEEE 830 标准的需求规格说明书
+核心功能包括六个模块
+用户注册登录、图书浏览搜索、购物车管理
+订单创建与流转、库存扣减恢复、统一异常处理
+
+=== Jira项目管理 ===
+【屏幕：jira/ 目录和 CSV 文件】
+
+使用 Scrum 三层结构管理任务
+5 个 Epic、10 个 Story、20 个 Sub-task
+合计 35 条工作任务
+Parent ID 关联父子关系
+
+任务状态使用三列看板
+To Do、In Progress、Done
+CSV 文件已兼容 Jira Cloud 新旧版本导入器
+
+=== 技术架构 ===
+【屏幕：src/main/java/com/onlinebookstore/】
+
+分层架构
+Controller 层 4 个控制器
+Book、Cart、Order、User
+
+Service 层处理所有业务逻辑
+Repository 层使用 Spring Data JPA
+Entity 层对应 6 张数据库表
+
+默认 H2 内存数据库
+可通过 Profile 切换 MySQL 和 Redis
+启动时初始化 12 本图书和 3 个用户
+
+=== 核心业务 ===
+【屏幕：OrderService.java】
+
+订单创建在同一个事务中完成
+先校验库存，再扣库存生成订单，最后清空购物车
+失败则全部回滚
+
+取消订单时恢复库存
+同时清除 Spring 缓存
+避免缓存导致的库存数据不一致
+
+=== 异常处理 ===
+【屏幕：GlobalExceptionHandler.java】
+
+统一 ErrorResponse 格式
+timestamp、status、errorCode、message、path
+7 种错误码
+BOOK_NOT_FOUND 返回 404
+INSUFFICIENT_STOCK 返回 400
+VALIDATION_FAILED 返回 400 并附带详情
+
+=== 测试与质量 ===
+【屏幕：target/site/jacoco/index.html】
+
+30 个单元测试全部通过
+JaCoCo 指令覆盖率 65.9%
+行覆盖率 63.4%
+类覆盖率 96.7%
+注释覆盖率 43.8%
+超过 30% 要求
+
+=== Swagger API ===
+【屏幕：http://localhost:8080/swagger-ui.html】
+
+集成 SpringDoc OpenAPI
+四个模块的接口文档
+可以直接在页面上测试
+openapi.yaml 可导入其他工具
+
+=== 部署准备 ===
+【屏幕：Jenkinsfile 和 JMeter 文件】
+
+Jenkinsfile 定义 8 阶段流水线
+JMeter 两阶段压测方案
+无缓存 vs Redis 缓存对照
+10、50、100 线程三个并发级别
+
+配置和脚本已就绪
+实际运行需在有 JMeter、Jenkins、Redis 的环境中完成
+
+=== 总结 ===
+【屏幕：DELIVERY_CHECKLIST.md】
+
+五个阶段完整管理
+需求、设计、开发、测试、部署准备
+
+代码层面全部完成
+编译、30 测试、JaCoCo、API 验证、异常格式
+
+仍需人工完成
+JMeter 压测、Git 推送、Jenkins 运行
+Jira 截图、Visio 图、需求评审视频
+
+经过评审，需求目标明确，功能范围完整
+技术方案可行，可以进入后续部署完善阶段
+谢谢各位老师

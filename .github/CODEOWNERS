@@ -1,0 +1,16 @@
+﻿# Code Owners configuration
+# 自动指定 PR 审查者
+
+# 全局默认审查者
+* @experiment5-team
+
+# Java 源代码
+src/main/java/**/*.java @开发人员1 @开发人员2
+
+# 测试代码
+src/test/java/**/*.java @测试人员
+
+# 配置文件
+pom.xml @ScrumMaster
+Jenkinsfile @ScrumMaster
+docker-compose.yml @ScrumMaster

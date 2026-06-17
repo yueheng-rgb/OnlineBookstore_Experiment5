@@ -1,0 +1,64 @@
+﻿Issue ID,Issue Type,Summary,Description,Priority,Status,Parent ID,Assignee,Assignee Role,Labels,Story Points,Original Estimate,Start Date,Due Date,Acceptance Criteria,Sprint
+1001,Feature,Epic: Requirements Analysis,"Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",Highest,Done,,????,Product Owner,"requirements,analysis",,40h,2026-03-01,2026-03-10,????????????????,Sprint 0
+1002,Feature,Epic: Book Management,"Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",Highest,Done,,????1,Developer,"book,backend",,60h,2026-03-11,2026-04-07,??CRUD??????????????,Sprint 1-2
+1003,Feature,Epic: Shopping Cart,"Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,,????2,Developer,"cart,backend",,40h,2026-04-08,2026-04-28,??????????????,Sprint 2
+1004,Feature,Epic: Order Management,"Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",Highest,Done,,????2,Developer,"order,backend",,50h,2026-04-29,2026-05-26,??????????????????,Sprint 3
+1005,Feature,Epic: Testing & Quality,"JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",High,Doing,,????,QA Engineer,"test,quality,devops",,50h,2026-05-27,2026-06-23,????????????CI/CD???,Sprint 3-4
+1006,Story,User Story: Requirements Analysis - Design & Planning,"Part of REQ Epic. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",High,Done,1001,????,Product Owner,"requirements,docs",5,16h,2026-03-01,2026-03-06,"1.SRS??IEEE 830
+2.??4???
+3.???????",Sprint 0
+1007,Story,User Story: Requirements Analysis - Implementation & Validation,"Part of REQ Epic. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",High,Done,1001,????,Product Owner,"requirements,personas",3,8h,2026-03-07,2026-03-10,"1.??2?????
+2.????10??
+3.??????",Sprint 0
+1008,Story,User Story: Book Management - Design & Planning,"Part of BOOK Epic. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",Highest,Done,1002,????1,Developer,"book,crud",8,24h,2026-03-11,2026-03-24,"1.CRUD API??
+2.ISBN?????
+3.??????
+4.????",Sprint 1
+1009,Story,User Story: Book Management - Implementation & Validation,"Part of BOOK Epic. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",High,Done,1002,????1,Developer,"book,search",5,16h,2026-03-25,2026-04-07,"1.??????
+2.????
+3.????
+4.????",Sprint 1-2
+1010,Story,User Story: Shopping Cart - Design & Planning,"Part of CART Epic. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,1003,????2,Developer,"cart,add",5,16h,2026-04-08,2026-04-17,"1.????
+2.??????
+3.????
+4.????",Sprint 2
+1011,Story,User Story: Shopping Cart - Implementation & Validation,"Part of CART Epic. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,1003,????2,Developer,"cart,manage",5,12h,2026-04-18,2026-04-28,"1.????
+2.????
+3.?????
+4.????",Sprint 2
+1012,Story,User Story: Order Management - Design & Planning,"Part of ORDER Epic. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",Highest,Done,1004,????2,Developer,"order,create",8,20h,2026-04-29,2026-05-12,"1.????????
+2.????
+3.?????
+4.?????",Sprint 3
+1013,Story,User Story: Order Management - Implementation & Validation,"Part of ORDER Epic. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",High,Done,1004,????2,Developer,"order,manage",5,16h,2026-05-13,2026-05-26,"1.????
+2.????
+3.????
+4.????
+5.????",Sprint 3
+1014,Story,User Story: Testing & Quality - Design & Planning,"Part of TEST Epic. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",Highest,Doing,1005,????,QA Engineer,"test,unit",8,24h,2026-05-27,2026-06-09,"1.Service???
+2.Controller???
+3.???>=70%
+4.100%??",Sprint 3
+1015,Story,User Story: Testing & Quality - Implementation & Validation,"Part of TEST Epic. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",High,Doing,1005,????,QA Engineer,"test,jmeter,devops",5,20h,2026-06-10,2026-06-23,"1.JMeter 6???
+2.Jenkinsfile 8??
+3.Docker Compose??",Sprint 4
+1016,Task,Task: Requirements Analysis - Setup & Configuration,"Sub-task. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",Medium,Done,1006,????,Product Owner,"docs,srs",,3h,2026-03-01,2026-03-02,??????????????,Sprint 0
+1017,Task,Task: Requirements Analysis - Core Implementation,"Sub-task. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",Medium,Done,1006,????,Product Owner,"docs,srs",,5h,2026-03-03,2026-03-05,????????????,Sprint 0
+1018,Task,Task: Requirements Analysis - Integration & Testing,"Sub-task. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",Medium,Done,1007,????,Product Owner,"docs,personas",,3h,2026-03-07,2026-03-08,2??????????????,Sprint 0
+1019,Task,Task: Requirements Analysis - Documentation & Review,"Sub-task. Requirements gathering, stakeholder interviews, functional specification, and acceptance criteria definition for the online bookstore system.",High,Doing,1007,????,Product Owner,"review,meeting",,4h,2026-03-09,2026-03-10,?????????????,Sprint 0
+1020,Task,Task: Book Management - Setup & Configuration,"Sub-task. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",High,Done,1008,????1,Developer,"book,entity,repo",,4h,2026-03-11,2026-03-13,???????Repository?CRUD+??,Sprint 1
+1021,Task,Task: Book Management - Core Implementation,"Sub-task. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",High,Done,1008,????1,Developer,"book,service",,8h,2026-03-14,2026-03-19,?????????????????,Sprint 1
+1022,Task,Task: Book Management - Integration & Testing,"Sub-task. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",High,Done,1008,????1,Developer,"book,controller,test",,6h,2026-03-20,2026-03-24,7?API????????????,Sprint 1
+1023,Task,Task: Book Management - Documentation & Review,"Sub-task. Book entity CRUD operations, search, filtering, pagination, ISBN validation, and inventory management APIs.",Medium,Done,1009,????1,Developer,"book,search",,4h,2026-03-25,2026-03-28,??API???????????????,Sprint 1
+1024,Task,Task: Shopping Cart - Setup & Configuration,"Sub-task. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,1010,????2,Developer,"cart,entity",,3h,2026-04-08,2026-04-09,???????????????,Sprint 2
+1025,Task,Task: Shopping Cart - Core Implementation,"Sub-task. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,1010,????2,Developer,"cart,service",,6h,2026-04-10,2026-04-14,??????????????????,Sprint 2
+1026,Task,Task: Shopping Cart - Integration & Testing,"Sub-task. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",Medium,Done,1011,????2,Developer,"cart,manage",,5h,2026-04-18,2026-04-23,???????????,Sprint 2
+1027,Task,Task: Shopping Cart - Documentation & Review,"Sub-task. Shopping cart functionality including add/remove items, quantity update, price snapshot, and cart persistence.",High,Done,1011,????2,Developer,"cart,controller,test",,4h,2026-04-24,2026-04-28,5?API??????????,Sprint 2
+1028,Task,Task: Order Management - Setup & Configuration,"Sub-task. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",High,Done,1012,????2,Developer,"order,entity",,3h,2026-04-29,2026-04-30,?????????????????,Sprint 3
+1029,Task,Task: Order Management - Core Implementation,"Sub-task. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",Highest,Done,1012,????2,Developer,"order,service",,8h,2026-05-01,2026-05-08,???????????????????,Sprint 3
+1030,Task,Task: Order Management - Integration & Testing,"Sub-task. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",High,Done,1013,????2,Developer,"order,status",,4h,2026-05-13,2026-05-17,???????????????,Sprint 3
+1031,Task,Task: Order Management - Documentation & Review,"Sub-task. Order creation from cart, stock deduction, order status workflow, cancellation with stock restoration.",High,Done,1013,????2,Developer,"order,cancel",,3h,2026-05-18,2026-05-21,????????????????,Sprint 3
+1032,Task,Task: Testing & Quality - Setup & Configuration,"Sub-task. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",Highest,Done,1014,????,QA Engineer,"test,service",,8h,2026-05-27,2026-06-02,??Service??????????,Sprint 3
+1033,Task,Task: Testing & Quality - Core Implementation,"Sub-task. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",High,Done,1014,????,QA Engineer,"test,controller",,6h,2026-06-03,2026-06-09,Controller?????API????,Sprint 3
+1034,Task,Task: Testing & Quality - Integration & Testing,"Sub-task. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",High,Doing,1015,????,QA Engineer,"test,jmeter",,5h,2026-06-10,2026-06-14,JMX?6?????????????,Sprint 4
+1035,Task,Task: Testing & Quality - Documentation & Review,"Sub-task. JMeter performance testing (nocache vs Redis), CI/CD pipeline setup, code quality checks, and deployment verification.",Medium,Doing,1015,Scrum Master,Scrum Master,"devops,jenkins,docker",,6h,2026-06-15,2026-06-20,Jenkinsfile??????Docker Compose???,Sprint 4

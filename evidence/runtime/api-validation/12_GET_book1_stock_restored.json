@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "http://localhost:8080/api/books/1",
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "code": 200,
+      "message": "操作成功",
+      "data": {
+        "id": 1,
+        "isbn": "978-7-111-11111-1",
+        "title": "Software Engineering Intro",
+        "author": "Zhang Haifan",
+        "publisher": "Tsinghua UP",
+        "description": "Classic SE textbook",
+        "price": 59.0,
+        "stock": 100,
+        "category": "CS",
+        "coverImageUrl": null,
+        "createdAt": "2026-06-16T20:23:15.404609",
+        "updatedAt": "2026-06-16T20:23:57.670865"
+      },
+      "timestamp": "2026-06-16T20:23:57.6803968"
+    }
+  }
+}

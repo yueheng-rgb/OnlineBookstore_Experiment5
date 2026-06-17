@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8080/api/users/register",
+    "body": {
+      "username": "testuser_1781612637",
+      "password": "test123456",
+      "email": "test_1781612637@example.com"
+    }
+  },
+  "response": {
+    "status": 201,
+    "body": {
+      "code": 200,
+      "message": "操作成功",
+      "data": {
+        "id": 4,
+        "username": "testuser_1781612637",
+        "email": "test_1781612637@example.com",
+        "phone": null,
+        "address": null,
+        "role": "CUSTOMER",
+        "createdAt": "2026-06-16T20:23:57.3628647",
+        "updatedAt": "2026-06-16T20:23:57.3628647"
+      },
+      "timestamp": "2026-06-16T20:23:57.3663904"
+    }
+  }
+}

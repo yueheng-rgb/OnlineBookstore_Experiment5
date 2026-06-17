@@ -1,0 +1,175 @@
+{
+  "results": [
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'content': [{'id': 12, 'isbn': '978-7-111-99999-4', 'title': 'AI Modern Approach', 'author': 'S. Russell', 'publisher': 'Tsinghua UP', 'description': 'AI textbook', 'price': 158.0, 'stock': 40, 'category': 'CS', 'coverImageUrl': None, 'createdAt': '2026-06-16T20:23:15.446929', 'updatedAt': '2026-06-16T20:23:15.446929'}, {'id': 11, 'isbn': '978-7-111-99999-3', 'title': 'To Live', 'author': 'Yu Hua', 'publisher': 'Writer Press', 'description': 'Life story'",
+      "verify": "Return >= 10 books",
+      "label": "GET_books",
+      "book_count": 11,
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books/1",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Classic SE textbook', 'price': 59.0, 'stock': 100, 'category': 'CS', 'coverImageUrl': None, 'createdAt': '2026-06-16T20:23:15.404609', 'updatedAt': '2026-06-16T20:23:15.404609'}, 'timestamp': '2026-06-16T20:23:57.2543472'}",
+      "verify": "Return book with id=1",
+      "label": "GET_book_1",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books/999999",
+      "body": null,
+      "status": 404,
+      "summary": "{'code': 404, 'message': \"Book 未找到，id: '999999'\", 'timestamp': '2026-06-16T20:23:57.2704684'}",
+      "verify": "Return 404",
+      "label": "GET_book_notfound",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/users/register",
+      "body": {
+        "username": "testuser_1781612637",
+        "password": "test123456",
+        "email": "test_1781612637@example.com"
+      },
+      "status": 201,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.3628647', 'updatedAt': '2026-06-16T20:23:57.3628647'}, 'timestamp': '2026-06-16T20:23:57.3663904'}",
+      "verify": "Create test user, return 201",
+      "label": "POST_register",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books/1",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Classic SE textbook', 'price': 59.0, 'stock': 100, 'category': 'CS', 'coverImageUrl': None, 'createdAt': '2026-06-16T20:23:15.404609', 'updatedAt': '2026-06-16T20:23:15.404609'}, 'timestamp': '2026-06-16T20:23:57.3769829'}",
+      "verify": "Check stock before order",
+      "label": "GET_book1_stock_before",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/carts/4/items",
+      "body": {
+        "bookId": 1,
+        "quantity": 2
+      },
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'user': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.362865', 'updatedAt': '2026-06-16T20:23:57.362865'}, 'cartItems': [{'id': 1, 'book': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Classic SE textbook', 'price': 59.0, ",
+      "verify": "Add book 1, qty 2 to cart",
+      "label": "POST_add_cart",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/carts/4",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'user': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.362865', 'updatedAt': '2026-06-16T20:23:57.362865', 'hibernateLazyInitializer': {}}, 'cartItems': [{'id': 1, 'book': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Class",
+      "verify": "View cart with items",
+      "label": "GET_cart",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/orders?userId=4",
+      "body": {
+        "shippingAddress": "123 Test Street, Beijing"
+      },
+      "status": 201,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'orderNumber': 'ORD-20260616-637561', 'user': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.362865', 'updatedAt': '2026-06-16T20:23:57.362865', 'hibernateLazyInitializer': {}}, 'totalAmount': 118.0, 'status': 'PENDING', 'shippingAddress': '123 Test Street, Beijing', 'orderItems': [{'id': 1, 'book': {'id': 1, 'isbn': '978-7",
+      "verify": "Create order, deduct stock",
+      "label": "POST_create_order",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/orders/1",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'orderNumber': 'ORD-20260616-637561', 'user': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.362865', 'updatedAt': '2026-06-16T20:23:57.362865', 'hibernateLazyInitializer': {}}, 'totalAmount': 118.0, 'status': 'PENDING', 'shippingAddress': '123 Test Street, Beijing', 'orderItems': [{'id': 1, 'book': {'id': 1, 'isbn': '978-7",
+      "verify": "Get order details",
+      "label": "GET_order",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books/1",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Classic SE textbook', 'price': 59.0, 'stock': 98, 'category': 'CS', 'coverImageUrl': None, 'createdAt': '2026-06-16T20:23:15.404609', 'updatedAt': '2026-06-16T20:23:57.589563'}, 'timestamp': '2026-06-16T20:23:57.6592582'}",
+      "verify": "Stock decreased by 2 (100 -> 98)",
+      "label": "GET_book1_stock_after",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/orders/1/cancel",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'orderNumber': 'ORD-20260616-637561', 'user': {'id': 4, 'username': 'testuser_1781612637', 'email': 'test_1781612637@example.com', 'phone': None, 'address': None, 'role': 'CUSTOMER', 'createdAt': '2026-06-16T20:23:57.362865', 'updatedAt': '2026-06-16T20:23:57.362865', 'hibernateLazyInitializer': {}}, 'totalAmount': 118.0, 'status': 'CANCELLED', 'shippingAddress': '123 Test Street, Beijing', 'orderItems': [{'id': 1, 'book': {'id': 1, 'isbn': '978",
+      "verify": "Cancel order, restore stock",
+      "label": "POST_cancel_order",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/books/1",
+      "body": null,
+      "status": 200,
+      "summary": "{'code': 200, 'message': '操作成功', 'data': {'id': 1, 'isbn': '978-7-111-11111-1', 'title': 'Software Engineering Intro', 'author': 'Zhang Haifan', 'publisher': 'Tsinghua UP', 'description': 'Classic SE textbook', 'price': 59.0, 'stock': 100, 'category': 'CS', 'coverImageUrl': None, 'createdAt': '2026-06-16T20:23:15.404609', 'updatedAt': '2026-06-16T20:23:57.670865'}, 'timestamp': '2026-06-16T20:23:57.6803968'}",
+      "verify": "Stock restored to original value",
+      "label": "GET_book1_stock_restored",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/carts/4/items",
+      "body": {
+        "bookId": 2,
+        "quantity": 99999
+      },
+      "status": 400,
+      "summary": "{'code': 400, 'message': '图书库存不足，当前库存: 80', 'timestamp': '2026-06-16T20:23:57.699992'}",
+      "verify": "Fail: stock insufficient -> 400",
+      "label": "POST_insufficient_stock",
+      "pass": true
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:8080/api/orders?userId=1",
+      "body": {
+        "shippingAddress": ""
+      },
+      "status": 400,
+      "summary": "{'code': 400, 'message': '参数校验失败', 'data': {'shippingAddress': '收货地址不能为空'}, 'timestamp': '2026-06-16T20:23:57.7110435'}",
+      "verify": "Fail: empty shipping -> 400",
+      "label": "POST_validation_error",
+      "pass": true
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:8080/api/orders/999999",
+      "body": null,
+      "status": 404,
+      "summary": "{'code': 404, 'message': \"Order 未找到，id: '999999'\", 'timestamp': '2026-06-16T20:23:57.7226086'}",
+      "verify": "Non-existent order -> 404",
+      "label": "GET_order_notfound",
+      "pass": true
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "book_count": 11,
+  "stock_before": 100,
+  "stock_after": 98,
+  "stock_restored": 100
+}

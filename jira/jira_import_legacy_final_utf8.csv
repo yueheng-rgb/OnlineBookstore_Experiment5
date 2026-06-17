@@ -1,0 +1,197 @@
+Issue ID,Issue Type,Summary,Description,Priority,Status,Parent,Labels,Story Points,Original Estimate,Start Date,Due Date
+1002,Epic,图书管理,"图书实体的增删改查、搜索过滤、分页、ISBN校验和库存管理API开发。
+
+负责人角色：Developer
+
+验收标准：
+CRUD",Highest,Done,,"book,backend",,60h,2026-03-11,2026-04-07
+1008,Story,图书CRUD与查询设计,"设计图书数据模型、API接口和数据库表结构，实现基本CRUD操作。
+
+负责人角色：Developer
+
+验收标准：
+1.CRUD API
+2.ISBN
+3.
+4.",Highest,Done,1002,"book,crud",8,24h,2026-03-11,2026-03-24
+1020,Sub-task,设计图书数据模型与API接口,"定义Book实体、DTO和RESTful API接口规范。
+
+负责人角色：Developer
+
+验收标准：
+Repository?CRUD+",High,Done,1008,"book,entity,repo",,4h,2026-03-11,2026-03-13
+1021,Sub-task,实现图书基本CRUD功能,"开发创建、查询、更新、删除图书的核心服务逻辑。
+
+负责人角色：Developer",High,Done,1008,"book,service",,8h,2026-03-14,2026-03-19
+1022,Sub-task,编写图书管理单元测试,"编写BookService和BookController的单元测试。
+
+负责人角色：Developer
+
+验收标准：
+7?API",High,Done,1008,"book,controller,test",,6h,2026-03-20,2026-03-24
+1009,Story,图书搜索与库存管理,"实现图书搜索、分类过滤、分页功能和库存扣减与恢复逻辑。
+
+负责人角色：Developer
+
+验收标准：
+1.
+2.
+3.
+4.",High,Done,1002,"book,search",5,16h,2026-03-25,2026-04-07
+1023,Sub-task,实现图书搜索与过滤功能,"开发按书名、作者、分类搜索和分页查询功能。
+
+负责人角色：Developer
+
+验收标准：
+API",Medium,Done,1009,"book,search",,4h,2026-03-25,2026-03-28
+1003,Epic,购物车管理,"购物车功能开发，包括添加与删除商品、数量更新、价格快照和购物车持久化。
+
+负责人角色：Developer",High,Done,,"cart,backend",,40h,2026-04-08,2026-04-28
+1010,Story,购物车核心功能设计,"设计购物车数据模型、CartItem结构和添加与删除商品的业务流程。
+
+负责人角色：Developer
+
+验收标准：
+1.
+2.
+3.
+4.",High,Done,1003,"cart,add",5,16h,2026-04-08,2026-04-17
+1024,Sub-task,设计购物车与购物车项数据模型,"定义Cart和CartItem实体、关联关系和API接口。
+
+负责人角色：Developer",High,Done,1010,"cart,entity",,3h,2026-04-08,2026-04-09
+1025,Sub-task,实现添加商品到购物车功能,"开发添加商品、数量累加、价格快照和库存校验逻辑。
+
+负责人角色：Developer",High,Done,1010,"cart,service",,6h,2026-04-10,2026-04-14
+1011,Story,购物车交互与校验,"实现数量更新、库存校验、价格快照和购物车清空功能。
+
+负责人角色：Developer
+
+验收标准：
+1.
+2.
+3.
+4.",High,Done,1003,"cart,manage",5,12h,2026-04-18,2026-04-28
+1026,Sub-task,实现购物车商品数量更新功能,"开发更新数量、移除商品和清空购物车功能。
+
+负责人角色：Developer",Medium,Done,1011,"cart,manage",,5h,2026-04-18,2026-04-23
+1027,Sub-task,编写购物车管理单元测试,"覆盖添加、更新、删除、库存不足等场景的单元测试。
+
+负责人角色：Developer
+
+验收标准：
+5?API",High,Done,1011,"cart,controller,test",,4h,2026-04-24,2026-04-28
+1004,Epic,订单管理,"订单创建（从购物车生成）、库存扣减、订单状态流转和取消订单库存恢复。
+
+负责人角色：Developer",Highest,Done,,"order,backend",,50h,2026-04-29,2026-05-26
+1012,Story,订单创建与库存扣减,"实现从购物车创建订单、生成订单编号、扣减库存的核心流程。
+
+负责人角色：Developer
+
+验收标准：
+1.
+2.
+3.
+4.",Highest,Done,1004,"order,create",8,20h,2026-04-29,2026-05-12
+1028,Sub-task,实现从购物车创建订单功能,"开发订单创建服务，包含购物车校验、库存校验和订单编号生成。
+
+负责人角色：Developer",High,Done,1012,"order,entity",,3h,2026-04-29,2026-04-30
+1029,Sub-task,实现库存扣减与事务管理,"在订单创建事务中完成库存扣减，确保数据一致性。
+
+负责人角色：Developer",Highest,Done,1012,"order,service",,8h,2026-05-01,2026-05-08
+1013,Story,订单状态管理与取消,"实现订单状态流转和取消订单并恢复库存功能。
+
+负责人角色：Developer
+
+验收标准：
+1.
+2.
+3.
+4.
+5.",High,Done,1004,"order,manage",5,16h,2026-05-13,2026-05-26
+1030,Sub-task,实现订单状态流转功能,"开发订单状态更新API，支持PENDING/PAID/SHIPPED/COMPLETED。
+
+负责人角色：Developer",High,Done,1013,"order,status",,4h,2026-05-13,2026-05-17
+1031,Sub-task,实现取消订单与库存恢复,"开发取消订单功能，恢复已扣减库存并更新订单状态。
+
+负责人角色：Developer",High,Done,1013,"order,cancel",,3h,2026-05-18,2026-05-21
+1001,Epic,需求分析,"在线书店系统的需求调研、利益相关者访谈、功能规格说明和验收标准定义。
+
+负责人角色：Product Owner",Highest,Done,,"requirements,analysis",,40h,2026-03-01,2026-03-10
+1006,Story,需求调研与规划,"完成需求调研、竞品分析和功能优先级排序，输出需求文档初稿。
+
+负责人角色：Product Owner
+
+验收标准：
+1.SRSIEEE 830
+2.4
+3.",High,Done,1001,"requirements,docs",5,16h,2026-03-01,2026-03-06
+1016,Sub-task,竞品分析与市场调研,"调研3个竞品书店系统，输出竞品分析报告。
+
+负责人角色：Product Owner",Medium,Done,1006,"docs,srs",,3h,2026-03-01,2026-03-02
+1017,Sub-task,功能需求梳理与优先级排序,"列出所有功能需求，按MoSCoW方法进行优先级排序。
+
+负责人角色：Product Owner",Medium,Done,1006,"docs,srs",,5h,2026-03-03,2026-03-05
+1007,Story,需求评审与确认,"组织需求评审会议，确认功能范围、验收标准和非功能性需求。
+
+负责人角色：Product Owner
+
+验收标准：
+1.2
+2.10
+3.",High,Done,1001,"requirements,personas",3,8h,2026-03-07,2026-03-10
+1018,Sub-task,编写功能规格说明书,"按模板编写完整的功能规格说明书，包含用例和验收标准。
+
+负责人角色：Product Owner
+
+验收标准：
+2",Medium,Done,1007,"docs,personas",,3h,2026-03-07,2026-03-08
+1019,Sub-task,组织需求评审会议并确认签字,"邀请相关方参加评审会议，记录会议纪要并确认签字。
+
+负责人角色：Product Owner",High,In Progress,1007,"review,meeting",,4h,2026-03-09,2026-03-10
+1005,Epic,测试与质量保障,"JMeter性能测试（无缓存vs Redis缓存对照）、CI/CD流水线搭建、代码质量检查和部署验证。
+
+负责人角色：QA Engineer
+
+验收标准：
+CI/CD",High,In Progress,,"test,quality,devops",,50h,2026-05-27,2026-06-23
+1014,Story,性能测试设计与执行,"设计JMeter测试计划，执行无缓存和Redis缓存两种模式下的性能对照测试。
+
+负责人角色：QA Engineer
+
+验收标准：
+1.Service
+2.Controller
+3.>=70%
+4.100%",Highest,In Progress,1005,"test,unit",8,24h,2026-05-27,2026-06-09
+1032,Sub-task,编写JMeter测试计划,"创建JMeter测试计划，包含6组线程组。
+
+负责人角色：QA Engineer
+
+验收标准：
+Service",Highest,Done,1014,"test,service",,8h,2026-05-27,2026-06-02
+1033,Sub-task,执行无缓存模式性能测试,"以nocache profile启动应用，运行基线性能测试。
+
+负责人角色：QA Engineer
+
+验收标准：
+ControllerAPI",High,Done,1014,"test,controller",,6h,2026-06-03,2026-06-09
+1015,Story,CI/CD与质量门禁,"搭建Jenkins CI/CD流水线，配置代码质量检查和自动化构建部署。
+
+负责人角色：QA Engineer
+
+验收标准：
+1.JMeter 6
+2.Jenkinsfile 8
+3.Docker Compose",High,In Progress,1005,"test,jmeter,devops",5,20h,2026-06-10,2026-06-23
+1034,Sub-task,执行Redis缓存模式性能测试,"启动Redis服务，以redis profile运行应用，执行缓存性能测试。
+
+负责人角色：QA Engineer
+
+验收标准：
+JMX?6",High,In Progress,1015,"test,jmeter",,5h,2026-06-10,2026-06-14
+1035,Sub-task,搭建Jenkins CI/CD流水线,"配置Jenkins Pipeline，集成编译、测试、JaCoCo和部署阶段。
+
+负责人角色：Scrum Master
+
+验收标准：
+JenkinsfileDocker Compose",Medium,In Progress,1015,"devops,jenkins,docker",,6h,2026-06-15,2026-06-20

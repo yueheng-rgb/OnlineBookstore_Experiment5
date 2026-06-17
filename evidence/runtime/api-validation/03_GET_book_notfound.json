@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "http://localhost:8080/api/books/999999",
+    "body": null
+  },
+  "response": {
+    "status": 404,
+    "body": {
+      "code": 404,
+      "message": "Book 未找到，id: '999999'",
+      "timestamp": "2026-06-16T20:23:57.2704684"
+    }
+  }
+}

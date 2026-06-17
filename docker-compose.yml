@@ -1,0 +1,34 @@
+﻿version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: online-bookstore-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: online_bookstore
+      MYSQL_USER: bookstore
+      MYSQL_PASSWORD: bookstore123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+  redis:
+    image: redis:7-alpine
+    container_name: online-bookstore-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+  app:
+    build: .
+    container_name: online-bookstore-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql
+      - redis
+volumes:
+  mysql-data:

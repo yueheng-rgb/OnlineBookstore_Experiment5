@@ -1,0 +1,184 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "http://localhost:8080/api/books",
+    "body": null
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "code": 200,
+      "message": "操作成功",
+      "data": {
+        "content": [
+          {
+            "id": 12,
+            "isbn": "978-7-111-99999-4",
+            "title": "AI Modern Approach",
+            "author": "S. Russell",
+            "publisher": "Tsinghua UP",
+            "description": "AI textbook",
+            "price": 158.0,
+            "stock": 40,
+            "category": "CS",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.446929",
+            "updatedAt": "2026-06-16T20:23:15.446929"
+          },
+          {
+            "id": 11,
+            "isbn": "978-7-111-99999-3",
+            "title": "To Live",
+            "author": "Yu Hua",
+            "publisher": "Writer Press",
+            "description": "Life story",
+            "price": 35.0,
+            "stock": 180,
+            "category": "Fiction",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.443409",
+            "updatedAt": "2026-06-16T20:23:15.443409"
+          },
+          {
+            "id": 10,
+            "isbn": "978-7-111-99999-2",
+            "title": "Refactoring",
+            "author": "M. Fowler",
+            "publisher": "Posts Press",
+            "description": "Code refactoring",
+            "price": 75.0,
+            "stock": 90,
+            "category": "SE",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.440369",
+            "updatedAt": "2026-06-16T20:23:15.440369"
+          },
+          {
+            "id": 9,
+            "isbn": "978-7-111-99999-1",
+            "title": "Design Patterns",
+            "author": "E. Gamma",
+            "publisher": "China Machine Press",
+            "description": "GoF patterns",
+            "price": 69.0,
+            "stock": 85,
+            "category": "CS",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.43784",
+            "updatedAt": "2026-06-16T20:23:15.43784"
+          },
+          {
+            "id": 8,
+            "isbn": "978-7-111-88888-8",
+            "title": "100 Years of Solitude",
+            "author": "G. Marquez",
+            "publisher": "Nanhai Pub",
+            "description": "Magical realism",
+            "price": 39.5,
+            "stock": 150,
+            "category": "Fiction",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.43584",
+            "updatedAt": "2026-06-16T20:23:15.43584"
+          },
+          {
+            "id": 7,
+            "isbn": "978-7-111-77777-7",
+            "title": "Three-Body Problem",
+            "author": "Liu Cixin",
+            "publisher": "Chongqing Press",
+            "description": "Sci-fi novel",
+            "price": 45.0,
+            "stock": 200,
+            "category": "Sci-Fi",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.43383",
+            "updatedAt": "2026-06-16T20:23:15.43383"
+          },
+          {
+            "id": 6,
+            "isbn": "978-7-111-66666-6",
+            "title": "Understanding JVM",
+            "author": "Zhou Zhiming",
+            "publisher": "China Machine Press",
+            "description": "JVM deep dive",
+            "price": 79.0,
+            "stock": 70,
+            "category": "CS",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.431309",
+            "updatedAt": "2026-06-16T20:23:15.431309"
+          },
+          {
+            "id": 5,
+            "isbn": "978-7-111-55555-5",
+            "title": "Intro to Algorithms",
+            "author": "T. Cormen",
+            "publisher": "China Machine Press",
+            "description": "Algorithm bible",
+            "price": 128.0,
+            "stock": 50,
+            "category": "CS",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.429731",
+            "updatedAt": "2026-06-16T20:23:15.429731"
+          },
+          {
+            "id": 4,
+            "isbn": "978-7-111-44444-4",
+            "title": "Mythical Man-Month",
+            "author": "F. Brooks",
+            "publisher": "Tsinghua UP",
+            "description": "SE management",
+            "price": 49.0,
+            "stock": 120,
+            "category": "SE",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.426665",
+            "updatedAt": "2026-06-16T20:23:15.426665"
+          },
+          {
+            "id": 3,
+            "isbn": "978-7-111-33333-3",
+            "title": "Spring in Action",
+            "author": "Craig Walls",
+            "publisher": "Posts Press",
+            "description": "Spring guide",
+            "price": 79.0,
+            "stock": 60,
+            "category": "CS",
+            "coverImageUrl": null,
+            "createdAt": "2026-06-16T20:23:15.423483",
+            "updatedAt": "2026-06-16T20:23:15.423483"
+          }
+        ],
+        "pageable": {
+          "pageNumber": 0,
+          "pageSize": 10,
+          "sort": {
+            "empty": false,
+            "unsorted": false,
+            "sorted": true
+          },
+          "offset": 0,
+          "paged": true,
+          "unpaged": false
+        },
+        "last": false,
+        "totalElements": 12,
+        "totalPages": 2,
+        "first": true,
+        "size": 10,
+        "number": 0,
+        "sort": {
+          "empty": false,
+          "unsorted": false,
+          "sorted": true
+        },
+        "numberOfElements": 10,
+        "empty": false
+      },
+      "timestamp": "2026-06-16T20:23:57.1029733"
+    }
+  }
+}
